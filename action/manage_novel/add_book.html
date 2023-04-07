@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="NoIndex, NoFollow" />
+        <title>Bảng điều khiển</title>
+        <link rel="shortcut icon" href="" />
+        <link href="/css/app.css" rel="stylesheet" />
+        <link href="/css/action.css" rel="stylesheet" />
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            [wire\:loading],
+            [wire\:loading\.delay],
+            [wire\:loading\.inline-block],
+            [wire\:loading\.inline],
+            [wire\:loading\.block],
+            [wire\:loading\.flex],
+            [wire\:loading\.table],
+            [wire\:loading\.grid],
+            [wire\:loading\.inline-flex] {
+                display: none;
+            }
+            [wire\:loading\.delay\.shortest],
+            [wire\:loading\.delay\.shorter],
+            [wire\:loading\.delay\.short],
+            [wire\:loading\.delay\.long],
+            [wire\:loading\.delay\.longer],
+            [wire\:loading\.delay\.longest] {
+                display: none;
+            }
+            [wire\:offline] {
+                display: none;
+            }
+            [wire\:dirty]:not(textarea):not(input):not(select) {
+                display: none;
+            }
+            input:-webkit-autofill,
+            select:-webkit-autofill,
+            textarea:-webkit-autofill {
+                animation-duration: 50000s;
+                animation-name: livewireautofill;
+            }
+            @keyframes livewireautofill {
+                from {
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Book</div>
+                        <div class="panel-body">
+                            <form role="form" method="POST" action="https://docln.net/action/book/store">
+                                <input type="hidden" name="_token" value="x9ZiMfYYUN3S2XKf7ZNaM70KqWR2C7tqnNHylsPr" />
+                                <input type="hidden" name="series_id" value="13757" />
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label pt-7 text-right">Tiêu đề</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="title" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label pt-5 text-right">Loại truyện</label>
+                                    <div class="col-md-10">
+                                        <select class="input-sm" name="seriestype">
+                                            <option value="1">Truyện dịch</option>
+                                            <option value="2">Truyện convert</option>
+                                            <option value="3">Truyện sáng tác</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label text-right">Tóm tắt</label>
+                                    <div class="col-md-10">
+                                        <textarea id="LN_Book_Summary" name="summary"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label pt-7 text-right">Link down</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="download" value="" />
+                                    </div>
+                                </div>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.2.1/tinymce.min.js" referrerpolicy="origin"></script>
+                                <script>
+                                    tinymce.init({
+                                        selector: "textarea",
+                                        height: 200,
+                                        skin: "oxide",
+                                        content_css: "default",
+                                        branding: false,
+                                        menubar: false,
+                                        contextmenu: false,
+                                        entities: "160,nbsp,38,amp,60,lt,62,gt",
+                                        paste_word_valid_elements: "b,strong,i,em,u,s,a,p,br,img",
+                                        element_format: "html",
+                                        formats: {
+                                            strikethrough: { inline: "s", remove: "all" },
+                                            underline: { inline: "u", remove: "all" },
+                                        },
+                                        plugins: "wordcount link image code fullscreen paste emoticons",
+                                        toolbar: "undo redo | bold italic underline strikethrough forecolor | link image | removeformat | fullscreen",
+                                    });
+                                </script>
+                                <div class="form-group">
+                                    <div class="col-md-10 col-md-offset-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            Thêm sách
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/livewire/livewire.js" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+        <script data-turbo-eval="false" data-turbolinks-eval="false">
+            window.livewire = new Livewire();
+            window.Livewire = window.livewire;
+            window.livewire_app_url = "";
+            window.livewire_token = "x9ZiMfYYUN3S2XKf7ZNaM70KqWR2C7tqnNHylsPr";
+            window.deferLoadingAlpine = function (callback) {
+                window.addEventListener("livewire:load", function () {
+                    callback();
+                });
+            };
+            let started = false;
+            window.addEventListener("alpine:initializing", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+        </script>
+    </body>
+</html>
