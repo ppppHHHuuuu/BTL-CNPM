@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
 
         <style>
             [wire\:loading],
@@ -54,6 +55,8 @@
                 }
             }
         </style>
+
+
     </head>
     <body>
         <nav class="navbar navbar-default" style="z-index: 999;">
@@ -81,7 +84,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Đăng ký</div>
                         <div class="panel-body">
-                            <form class="form-horizontal" role="form" method="POST" action="register.html">
+                            <form id="registerForm" class="form-horizontal" role="form" method="POST" action="register.html">
                                 <input type="hidden" name="_token" value="rEXrKmo6EGV2xaYSUum1FgTsURBWITWQyK4vGyj8" />
                                 <div class="form-group">
                                     <label for="name" class="col-md-4 control-label">Tên đăng nhập</label>
@@ -107,16 +110,10 @@
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" />
                                     </div>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <label for="" class="col-md-4 control-label"></label>
-                                    <div class="col-md-6">
-                                        <div data-sitekey="6Lepy_8SAAAAAHR0slgcLDesjl1_Hgg9A9KsBEs9" class="g-recaptcha"></div>
-                                        <script src="https://www.google.com/recaptcha/api.js?hl=vi" async defer></script>
-                                    </div>
-                                </div> -->
+                               
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary"><i class="fas fa-btn fa-user"></i> Đăng ký</button>
+                                        <button type="submit"  class="btn btn-primary"><i class="fas fa-btn fa-user"></i> Đăng ký</button>
                                     </div>
                                 </div>
                             </form>
@@ -125,6 +122,34 @@
                 </div>
             </div>
         </div>
+         
+        <script>
+            $(document).ready(function() {
+            $('#registerForm').submit(function(e) {
+                e.preventDefault();
+
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var password = $('#password').val();
+                var passwordConfirm = $('#password-confirm').val();
+
+                if (!name || !email || !password || !passwordConfirm) {
+                    alert('Vui lòng điền đầy đủ thông tin');
+                    return false;
+                }
+
+                if (password !== passwordConfirm) {
+                    alert('Mật khẩu không trùng khớp');
+                    return false;
+                }
+
+                // Submit form if all validations pass
+                alert('Đăng ký thành công');
+                $('#registerForm').unbind('submit').submit();
+            });
+        });
+        </script>
+        
 
         <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false"></script>
                 <script data-turbo-eval="false" data-turbolinks-eval="false">
