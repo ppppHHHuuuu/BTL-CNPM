@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="NoIndex, NoFollow" />
+        <title>Bảng điều khiển</title>
+        <link rel="shortcut icon" href="" />
+        <link href="/css/app.css" rel="stylesheet" />
+        <link href="/css/action.css" rel="stylesheet" />
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        
+        <style>
+            [wire\:loading],
+            [wire\:loading\.delay],
+            [wire\:loading\.inline-block],
+            [wire\:loading\.inline],
+            [wire\:loading\.block],
+            [wire\:loading\.flex],
+            [wire\:loading\.table],
+            [wire\:loading\.grid],
+            [wire\:loading\.inline-flex] {
+                display: none;
+            }
+            [wire\:loading\.delay\.shortest],
+            [wire\:loading\.delay\.shorter],
+            [wire\:loading\.delay\.short],
+            [wire\:loading\.delay\.long],
+            [wire\:loading\.delay\.longer],
+            [wire\:loading\.delay\.longest] {
+                display: none;
+            }
+            [wire\:offline] {
+                display: none;
+            }
+            [wire\:dirty]:not(textarea):not(input):not(select) {
+                display: none;
+            }
+            input:-webkit-autofill,
+            select:-webkit-autofill,
+            textarea:-webkit-autofill {
+                animation-duration: 50000s;
+                animation-name: livewireautofill;
+            }
+            @keyframes livewireautofill {
+                from {
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default" style="z-index: 999;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/trang-chu.html" target="_blank"><i class="fas fa-home"></i><span class="hidden-md hidden-lg"> Cổng Light Novel</span></a>
+                        </li>
+                        <li><a href="/action/manage_novel/add_novel.html" style="color: red;">Thêm Truyện</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"> </span><span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a>Akainu</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/action/account/profile.html">Đổi Thông Tin</a></li>
+                                <li><a href="/action/account/password.html">Đổi Mật Khẩu</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/action/account/email.html">Đổi Email</a></li>
+                                <li><a href="/action/account/username.html">Đổi Username</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Thoát</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Series</div>
+                        <div class="panel-body">
+                            <form role="form" method="POST" action="https://docln.net/action/series/store">
+                                <input type="hidden" name="_token" value="DlNAjrU0x00F87eugPViANFAOb4Uk6MEG6hm5IGF" />
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label pt-7 text-right">Tiêu đề</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="title" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label pt-7 text-right">Tên khác</label>
+                                    <div class="col-md-8">
+                                        <input type="text" placeholder="Ngăn cách nhiều tên bằng dấu chấm phẩy ;" class="form-control" name="altname" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label text-right"><b>Nội dung nhạy cảm?</b></label>
+                                    <div class="col-md-8">
+                                        <input type="checkbox" name="is_mature" value="1" />
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label pt-7 text-right">Tác giả</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="author" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label pt-7 text-right">Họa sĩ</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="illustrator" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label pt-5 text-right">Loại truyện</label>
+                                    <div class="col-md-10">
+                                        <select class="input-sm" name="type" id="select-type">
+                                            <option value="1">Truyện dịch</option>
+                                            <option value="2">Truyện convert</option>
+                                            <option value="3">Truyện sáng tác</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label pt-5 text-right">Nhóm dịch</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="author" value="" />
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label pt-7 text-right">Thể loại</label>
+                                    <div class="col-md-8">
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="1" />Action </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="49" />Adapted to Anime </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="51" />Adapted to Drama CD </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="50" />Adapted to Manga </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="28" />Adult </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="2" />Adventure </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="52" />Age Gap </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="60" />Boys Love </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="54" />Character Growth </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="39" />Chinese Novel </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="3" />Comedy </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="43" />Cooking </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="56" />Different Social Status </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="4" />Drama </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="5" />Ecchi </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="40" />English Novel </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="6" />Fantasy </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="59" />Female Protagonist </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="45" />Game </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="7" />Gender Bender </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="8" />Harem </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="35" />Historical </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="9" />Horror </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="10" />Incest </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="30" />Isekai </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="33" />Josei </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="34" />Korean Novel </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="44" />Magic </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="37" />Martial Arts </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="27" />Mature </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="11" />Mecha </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="36" />Military </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="58" />Misunderstanding </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="12" />Mystery </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="32" />Netorare </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="38" />One shot </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="46" />Otome Game </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="61" />Parody </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="23" />Psychological </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="47" />Reverse Harem </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="22" />Romance </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="13" />School Life </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="14" />Science Fiction </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="31" />Seinen </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="15" />Shoujo </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="16" />Shoujo ai </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="26" />Shounen </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="17" />Shounen ai </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="18" />Slice of Life </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="55" />Slow Life </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="19" />Sports </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="24" />Super Power </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="20" />Supernatural </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="25" />Suspense </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="21" />Tragedy </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="53" />Wars </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="29" />Web Novel </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="57" />Workplace </label>
+                                        <label class="checkbox-inline" style="width: 130px;"> <input type="checkbox" name="genres[]" value="48" />Yuri </label>
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label text-right">Tóm tắt</label>
+                                    <div class="col-md-10">
+                                        <textarea id="LN_Series_Summary" name="summary"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label text-right">Chú thích thêm</label>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" id="extrainfo" name="extra"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label pt-5 text-right">Tình trạng dịch</label>
+                                    <div class="col-md-10">
+                                        <select class="input-sm" name="status">
+                                            <option value="1">Đang tiến hành</option>
+                                            <option value="2">Tạm ngưng</option>
+                                            <option value="3">Đã hoàn thành</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.2.1/tinymce.min.js" referrerpolicy="origin"></script>
+                                <script>
+                                    tinymce.init({
+                                        selector: "textarea",
+                                        height: 300,
+                                        skin: "oxide",
+                                        content_css: "default",
+                                        branding: false,
+                                        menubar: false,
+                                        contextmenu: false,
+                                        entities: "160,nbsp,38,amp,60,lt,62,gt",
+                                        paste_word_valid_elements: "b,strong,i,em,u,s,a,p,br,img",
+                                        element_format: "html",
+                                        formats: {
+                                            strikethrough: { inline: "s", remove: "all" },
+                                            underline: { inline: "u", remove: "all" },
+                                        },
+                                        plugins: "wordcount link image code fullscreen paste emoticons",
+                                        toolbar: "undo redo | bold italic underline strikethrough forecolor | link image | removeformat | fullscreen",
+                                    });
+                                </script>
+                                <div class="form-group">
+                                    <div class="col-md-10 col-md-offset-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            Thêm truyện
+                                        </button>
+                                        <a href="javascript: history.back()" class="btn btn-warning">
+                                            Quay lại
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+        <script data-turbo-eval="false" data-turbolinks-eval="false">
+            window.livewire = new Livewire();
+            window.Livewire = window.livewire;
+            window.livewire_app_url = "";
+            window.livewire_token = "DlNAjrU0x00F87eugPViANFAOb4Uk6MEG6hm5IGF";
+            window.deferLoadingAlpine = function (callback) {
+                window.addEventListener("livewire:load", function () {
+                    callback();
+                });
+            };
+            let started = false;
+            window.addEventListener("alpine:initializing", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+        </script>
+    </body>
+</html>

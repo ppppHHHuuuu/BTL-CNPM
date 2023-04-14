@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="NoIndex, NoFollow" />
+        <title>Bảng điều khiển</title>
+        <link rel="shortcut icon" href="" />
+        <link href="/css/app.css" rel="stylesheet" />
+        <link href="/css/action.css" rel="stylesheet" />
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            [wire\:loading],
+            [wire\:loading\.delay],
+            [wire\:loading\.inline-block],
+            [wire\:loading\.inline],
+            [wire\:loading\.block],
+            [wire\:loading\.flex],
+            [wire\:loading\.table],
+            [wire\:loading\.grid],
+            [wire\:loading\.inline-flex] {
+                display: none;
+            }
+            [wire\:loading\.delay\.shortest],
+            [wire\:loading\.delay\.shorter],
+            [wire\:loading\.delay\.short],
+            [wire\:loading\.delay\.long],
+            [wire\:loading\.delay\.longer],
+            [wire\:loading\.delay\.longest] {
+                display: none;
+            }
+            [wire\:offline] {
+                display: none;
+            }
+            [wire\:dirty]:not(textarea):not(input):not(select) {
+                display: none;
+            }
+            input:-webkit-autofill,
+            select:-webkit-autofill,
+            textarea:-webkit-autofill {
+                animation-duration: 50000s;
+                animation-name: livewireautofill;
+            }
+            @keyframes livewireautofill {
+                from {
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"></div>
+                        <div class="panel-body">
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>Không có lịch sử chỉnh sửa!</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-warning" onclick="history.back()">
+                                Quay lại
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+        <script data-turbo-eval="false" data-turbolinks-eval="false">
+            window.livewire = new Livewire();
+            window.Livewire = window.livewire;
+            window.livewire_app_url = "";
+            window.livewire_token = "x9ZiMfYYUN3S2XKf7ZNaM70KqWR2C7tqnNHylsPr";
+            window.deferLoadingAlpine = function (callback) {
+                window.addEventListener("livewire:load", function () {
+                    callback();
+                });
+            };
+            let started = false;
+            window.addEventListener("alpine:initializing", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+        </script>
+    </body>
+</html>

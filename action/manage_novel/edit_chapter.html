@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="NoIndex, NoFollow" />
+        <title>Bảng điều khiển</title>
+        <link rel="shortcut icon" href="" />
+        <link href="/css/app.css" rel="stylesheet" />
+        <link href="/css/action.css" rel="stylesheet" />
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            [wire\:loading],
+            [wire\:loading\.delay],
+            [wire\:loading\.inline-block],
+            [wire\:loading\.inline],
+            [wire\:loading\.block],
+            [wire\:loading\.flex],
+            [wire\:loading\.table],
+            [wire\:loading\.grid],
+            [wire\:loading\.inline-flex] {
+                display: none;
+            }
+            [wire\:loading\.delay\.shortest],
+            [wire\:loading\.delay\.shorter],
+            [wire\:loading\.delay\.short],
+            [wire\:loading\.delay\.long],
+            [wire\:loading\.delay\.longer],
+            [wire\:loading\.delay\.longest] {
+                display: none;
+            }
+            [wire\:offline] {
+                display: none;
+            }
+            [wire\:dirty]:not(textarea):not(input):not(select) {
+                display: none;
+            }
+            input:-webkit-autofill,
+            select:-webkit-autofill,
+            textarea:-webkit-autofill {
+                animation-duration: 50000s;
+                animation-name: livewireautofill;
+            }
+            @keyframes livewireautofill {
+                from {
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Chapter</div>
+                        <div class="panel-body">
+                            <script>
+                                referrer = document.referrer;
+                                if (referrer.indexOf("/action/nav") < 0 && referrer.indexOf("/manage") < 0) {
+                                    parent.nav.location.href = parent.nav.location.href.split("?")[0] + "?chapter_id=105075";
+
+                                    if (window !== window.parent) {
+                                        parent.history.pushState({}, "", parent.location.pathname + "?chapter_id=105075&action=editchapter");
+                                    }
+                                }
+                            </script>
+                            <form role="form" method="POST" action="https://docln.net/action/chapter/update">
+                                <input type="hidden" name="_token" value="x9ZiMfYYUN3S2XKf7ZNaM70KqWR2C7tqnNHylsPr" />
+                                <input type="hidden" name="chapter_id" value="105075" />
+                                <div class="form-group clearfix required">
+                                    <label class="col-md-2 control-label pt-7">Tiêu đề</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="title" value="Prologue" />
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label pt-7">Tiến độ</label>
+                                    <div class="col-md-8 pt-7">
+                                        <input type="radio" name="complete" id="complete_cb1" value="1" checked />
+                                        <label for="complete_cb1">Đã hoàn thành</label>&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="complete" id="complete_cb2" value="0" />
+                                        <label for="complete_cb2">Chưa hoàn thành</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group clearfix required">
+                                    <div class="col-md-12">
+                                        <label class="control-label">Nội dung</label>
+                                        <textarea id="LN_Chapter_Content" class="form-control" name="content">
+&lt;p id=&quot;1&quot;&gt;Phản chiếu trong đôi mắt tôi, là hình bóng một người con gái đang tỏa sáng.&lt;/p&gt;&lt;p id=&quot;2&quot;&gt;(Bọn mình gần đến ga tàu rồi này.)&lt;/p&gt;&lt;p id=&quot;3&quot;&gt;Làn da trắng muốt của cô dễ khiến người ta ngỡ rằng cô đang đứng giữa trời bão tuyết.&lt;/p&gt;&lt;p id=&quot;4&quot;&gt;(Mới đầu tháng chín thôi mà, còn hơi sớm để nói về tuyết đấy.)&lt;/p&gt;&lt;p id=&quot;5&quot;&gt;‘Cậu ấy sẽ không tan ra nếu như mình chạm vào đâu nhỉ?’. Những suy nghĩ này bủa vây lấy tôi, bởi trông cô ấy chẳng khác nào một bức tượng được tạc bằng băng cả.&lt;/p&gt;&lt;p id=&quot;6&quot;&gt;(Tớ vẫn nghiêm túc rèn luyện cơ thể ở câu lạc bộ đấy nhé, trái tim tớ lúc này đang cháy hơn bao giờ hết!)&lt;/p&gt;&lt;p id=&quot;7&quot;&gt;Một kẻ tầm thường như tôi thì làm sao đủ trình để hiểu được được suy nghĩ cũng như mong muốn của cô gái thông minh này chứ.&lt;/p&gt;&lt;p id=&quot;8&quot;&gt;(Chắc hẳn con tim cậu ấy đang rộn ràng lắm, bọn mình sắp sửa đi mua thứ cậu ấy thích cơ mà.)&lt;/p&gt;&lt;p id=&quot;9&quot;&gt;…Aiss, nói lắm thế. Cô có thôi chen vào quãng thời gian quý báu ở bên Himeno Miina của tôi được không hả?&lt;/p&gt;&lt;p id=&quot;10&quot;&gt;(Nhưng tớ cũng là Himeno Miina mà! Hàng chính hãng luôn đấy, nhớ chưa?!)&lt;/p&gt;&lt;p id=&quot;11&quot;&gt;Ở trong toa tàu, ánh mắt tôi hoàn toàn bị thu hút bởi một Himeno Miina cao quý đang ngồi kế bên. Dưới góc nhìn của tôi, có một người nữa giống hệt Himeno Miina đang đứng đó khoanh tay, bĩu môi hờn dỗi. Nhưng khác với Himeno Miina kia, cô gái này hoàn toàn trong suốt.&lt;/p&gt;&lt;p id=&quot;12&quot;&gt;(Ánh mắt như đang nhìn thấy ma ấy là sao hả?)&lt;/p&gt;&lt;p id=&quot;13&quot;&gt;Làn da cô tựa hồ như lớp băng tan trong suốt, đến mức gần như có thể nhìn xuyên qua được.&lt;/p&gt;&lt;p id=&quot;14&quot;&gt;(V-vẫn hơn cái thứ da trắng bệch mà, không phải sao?)&lt;/p&gt;&lt;p id=&quot;15&quot;&gt;Cô ta đang tỏa nhiều nhiệt đến mức nếu như tôi mà chạm vào e rằng sẽ bỏng tay luôn mất.&lt;/p&gt;&lt;p id=&quot;16&quot;&gt;(Đó nha, bằng chứng cho thấy vẫn có máu chảy trong huyết quản tớ đấy. Tớ có mọi thứ, kể cả là lòng trắc ẩn của con người đó, biết chưa?)&lt;/p&gt;&lt;p id=&quot;17&quot;&gt;Mọi tâm tư và nguyện vọng của con nhỏ ngốc này, tôi đều nắm rõ trong lòng bàn tay. Bởi dù sao thì, từng lời nói và cảm xúc chân thật của cô ấy đều được truyền thẳng đến tai tôi hết mà.&lt;/p&gt;&lt;p id=&quot;18&quot;&gt;(Con nhỏ ngốc là ý gì hở?)&lt;/p&gt;&lt;p id=&quot;19&quot;&gt;Có ai đó trả lời giúp tôi tại sao cô nàng này cũng thấy được toàn bộ suy nghĩ của tôi không? Chống hai tay lên hông, cô ấy rướn người về phía tôi. N-Này, gần quá rồi đó! Cô sẽ phả hơi vào tôi mất! Ngực tôi bắt đầu tăng tốc và càng ngày càng đập mạnh hơn đây này!&lt;/p&gt;&lt;p id=&quot;20&quot;&gt;(Ah, eh, ahh!? G-Gì thế này…Awawawa~!)&lt;/p&gt;&lt;p id=&quot;21&quot;&gt;Có lẽ do vừa phản ứng lại với con tim đang đập liên hồi của tôi, làn da ấy không còn trắng muốt hay trong suốt nữa mà thay vào đó là như chiếc lá đỏ mùa thu.&lt;/p&gt;&lt;p id=&quot;22&quot;&gt;(Itsuki-kun, cậu căng thẳng quá rồi đấy! B-B-Bình tĩnh lại đi!)&lt;/p&gt;&lt;p id=&quot;23&quot;&gt;T-T-Tại cô hết đó Miena, tự dưng ghé sát lại làm gì!&lt;/p&gt;&lt;p id=&quot;24&quot;&gt;(U-Uwa, ra là vì tớ ư, nếu vậy thì đành chịu thôi chứ biết sao giờ!)&lt;/p&gt;&lt;p id=&quot;25&quot;&gt;K-Không, không phải thế! Tôi bị hút hồn bởi vẻ đẹp của Himeno Miena siêu đáng yêu, chứ không phải bởi con nhỏ Miena cô nhá!&lt;/p&gt;&lt;p id=&quot;26&quot;&gt;(Hứ, cái bản mặt ngu ngu đần đần kia thì đáng yêu cái nỗi gì…)&lt;/p&gt;&lt;p id=&quot;27&quot;&gt;Này nhé, từ ngày nhập học đến giờ, cậu ấy lúc nào cũng đạt điểm tuyệt đối trong mọi bài kiểm tra đấy, cô không thể bảo cậu ấy ngu đần được.&lt;/p&gt;&lt;p id=&quot;28&quot;&gt;(Thì tớ cũng thế mà!)&lt;/p&gt;&lt;p id=&quot;29&quot;&gt;Phải, con nhỏ này cũng vậy. Mặc dù chẳng muốn thừa nhận đâu, nhưng Himeno Miina vô cùng xinh đẹp và trang nghiêm đang ngồi cạnh tôi trong tư thế thẳng lưng và Miena nãy giờ lải nhải trước mặt tôi đây là cùng một người.&lt;/p&gt;&lt;p id=&quot;30&quot;&gt;(Ah, đây rồi! Bọn mình xuống ga này này! Nhanh chân lên nào!)&lt;/p&gt;&lt;p id=&quot;31&quot;&gt;Cặp mắt Miena sáng rực lên khi chúng tôi đến ga, cô ấy thúc giục tôi mau chóng xuống tàu. Tôi đuổi theo Himeno Miina mà mình thầm thương trộm nhớ và Miena trong suốt. Rốt cuộc chuyện này là sao đây… Những tháng ngày cao trung của tôi đang diễn ra trong yên bình, thì cách đây đâu đó hai hôm…một con nhỏ trong suốt có cùng nhịp đập trái tim với tôi…Miena…đột nhiên xuất hiện. Kể từ đó–đúng vào buổi khai giảng hai hôm trước, cuộc sống chung kỳ quặc giữa tôi–Saotome Itsuki và Miena bắt đầu.&lt;/p&gt;&lt;p id=&quot;32&quot;&gt;Ahhhh! Hỏi thật đấy, tại sao mọi chuyện lại thành ra như thế này!?&lt;/p&gt;
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <label class="col-md-2 control-label pt-7">Lí do sửa</label>
+                                    <div class="col-md-8">
+                                        <input type="text" placeholder="Có thể bỏ trống" class="form-control" name="reason" value="" />
+                                    </div>
+                                </div>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.2.1/tinymce.min.js" referrerpolicy="origin"></script>
+                                <script>
+                                    tinymce.init({
+                                        selector: "#LN_Chapter_Content",
+                                        height: 400,
+                                        skin: "oxide",
+                                        content_css: "default",
+                                        branding: false,
+                                        menubar: false,
+                                        contextmenu: false,
+                                        entities: "160,nbsp,38,amp,60,lt,62,gt",
+                                        paste_word_valid_elements: "b,strong,i,em,u,s,a,p,br,img",
+                                        element_format: "html",
+                                        formats: {
+                                            strikethrough: { inline: "s", remove: "all" },
+                                            underline: { inline: "u", remove: "all" },
+                                        },
+                                        plugins: "wordcount link image code fullscreen paste emoticons",
+                                        toolbar: "undo redo | bold italic underline strikethrough fore |  image | removeformat | fullscreen",
+                                    });
+                                </script>
+                                <div class="form-group" style="display: flex;">
+                                    <div class="col-md-2 col-md-offset-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            Cập nhật
+                                        </button>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="btn btn-warning" href="/action/manage_novel/revision_chapter.html" style="color: white; float: right !important;">
+                                            Xem lịch sử
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <style>
+                        .note-input {
+                            margin-bottom: 10px;
+                        }
+
+                        .note-result {
+                            display: block;
+                        }
+
+                        .note-toolkit {
+                            margin-bottom: 10px;
+                        }
+
+                        .notegroup {
+                            margin-bottom: 30px;
+                        }
+
+                        .note-guide {
+                            margin-bottom: 30px;
+                            color: orange;
+                        }
+                    </style>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Chú thích (Giới hạn 500 ký tự cho mỗi note)</div>
+                        <div class="panel-body">
+                            <span class="note-guide col-xs-12">
+                                Dấu '+' để thêm note / Dấu 'x' để bỏ note <br />
+                                Nhấn 'v' để lưu note rồi chép BBcode xuất hiện bên dưới lên trên chỗ cần ghi chú <br />
+                                Khi cần cập nhật note chỉ cần sửa trong mục ghi chú, bấm 'v' để lưu lại
+                            </span>
+                            <div class="form-group clearfix">
+                                <div class="notegroup clearfix">
+                                    <div class="note-input col-md-9">
+                                        <textarea class="form-control block note-content" name="note"></textarea>
+                                        <input type="hidden" class="note_id" value="" />
+                                    </div>
+                                    <div class="note-toolkit col-md-3">
+                                        <span type="button" class="btn btn-default noteicon noteplus"><i class="fas fa-plus"></i></span>
+                                        <span type="button" class="btn btn-success noteicon notesave"><i class="fas fa-check"></i></span>
+                                        <span type="button" class="btn btn-danger noteicon noteremove"><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div style="clear: both;"></div>
+                                    <div class="note-result col-xs-12">
+                                        <span class="block notekey"></span>
+                                        <span class="block response"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="note-guide col-xs-12">
+                                Dùng &lt;a href=&quotlink&quot&gt;Tên link&lt;&sol;a&gt; đễ dẫn link <br />
+                                Dùng &lt;strong&gt;&lt;&sol;strong&gt; để tô đậm <br />
+                                Dùng &lt;m&gt;&lt;&sol;em&gt; để in nghiêng <br />
+                                Dùng &lt;u&gt;&lt;&sol;u&gt; để gạch dưới
+                            </span>
+                        </div>
+                    </div>
+                    <script>
+                        var token = "x9ZiMfYYUN3S2XKf7ZNaM70KqWR2C7tqnNHylsPr";
+
+                        $(".noteplus").on("click", function () {
+                            var parent = $(this).parent().parent();
+
+                            parent.clone(true).find("textarea[name=note]").val("").end().find("input.note_id").val("").end().find("span.notekey").text("").end().appendTo(parent.parent());
+                        });
+
+                        $(".notesave").on("click", function () {
+                            var parent = $(this).parent().parent();
+
+                            var chapter_id = $("input[name=chapter_id]").val();
+                            var note_id = parent.find("input.note_id").val();
+                            var content = parent.find("textarea[name=note]").val();
+
+                            var url = parseInt(note_id) ? "https://docln.net/action/note/update" : "https://docln.net/action/note/store";
+
+                            if (content.trim() == "") {
+                                alert("Nội dung chú thích không thể bỏ trống");
+                                return;
+                            }
+
+                            $.post(
+                                url,
+                                { _token: token, note_id: note_id, chapter_id: chapter_id, content: content },
+                                function (data) {
+                                    if (data.status == "success") {
+                                        parent.find("span.notekey").text((parseInt(note_id) ? "Đã lưu - " : "") + "[note" + data.note_id + "]");
+                                        parent.find("input.note_id").val(data.note_id);
+                                    } else {
+                                        parent.find("span.response").text(data.message);
+                                    }
+                                },
+                                "json"
+                            );
+                        });
+
+                        $(".noteremove").on("click", function () {
+                            var parent = $(this).parent().parent();
+
+                            var note_id = parent.find(".note_id").val();
+
+                            if (!note_id.length) {
+                                parent.remove();
+                                return false;
+                            }
+
+                            if (confirm("Bạn có chắc muốn xóa Chú thích này không?")) {
+                                $.post(
+                                    "https://docln.net/action/note/destroy",
+                                    { _token: token, note_id: note_id },
+                                    function (data) {
+                                        if (data.status == "success") {
+                                            parent.remove();
+                                        } else {
+                                            parent.find("span.response").text(data.message);
+                                        }
+                                    },
+                                    "json"
+                                );
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" />
+        <!-- <link href="https://docln.net/scripts/plugins/upload/css/upload.css" rel="stylesheet" />
+
+        <script src="https://docln.net/scripts/plugins/upload/js/jquery.ui.widget.js"></script>
+        <script src="https://docln.net/scripts/plugins/upload/js/jquery.iframe-transport.js"></script>
+        <script src="https://docln.net/scripts/plugins/upload/js/jquery.fileupload.js"></script> -->
+        <!-- <script>
+            uploadSeriesUrl = "https://docln.net/action/upload/series";
+            uploadBookUrl = "https://docln.net/action/upload/book";
+            uploadChapterUrl = "https://docln.net/action/upload/image";
+            uploadAvatarUrl = "https://docln.net/action/upload/avatar";
+            remoteUploadUrl = "https://docln.net/action/upload/remote";
+
+            coverSeriesUrl = "https://docln.net/covers/series";
+            coverBookUrl = "https://docln.net/covers/books";
+        </script> -->
+
+        <!-- <script src="https://docln.net/scripts/plugins/upload/js/upload.js?v=7"></script> -->
+        <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+        <script data-turbo-eval="false" data-turbolinks-eval="false">
+            window.livewire = new Livewire();
+            window.Livewire = window.livewire;
+            window.livewire_app_url = "";
+            window.livewire_token = "x9ZiMfYYUN3S2XKf7ZNaM70KqWR2C7tqnNHylsPr";
+            window.deferLoadingAlpine = function (callback) {
+                window.addEventListener("livewire:load", function () {
+                    callback();
+                });
+            };
+            let started = false;
+            window.addEventListener("alpine:initializing", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+        </script>
+    </body>
+</html>

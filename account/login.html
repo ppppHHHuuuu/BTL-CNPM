@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="NoIndex, NoFollow" />
+        <title>Bảng điều khiển</title>
+        <link rel="shortcut icon" href="" />
+        <link href="/css/action.css" rel="stylesheet" />
+        <link href="/css/app.css" rel="stylesheet" />
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            [wire\:loading],
+            [wire\:loading\.delay],
+            [wire\:loading\.inline-block],
+            [wire\:loading\.inline],
+            [wire\:loading\.block],
+            [wire\:loading\.flex],
+            [wire\:loading\.table],
+            [wire\:loading\.grid],
+            [wire\:loading\.inline-flex] {
+                display: none;
+            }
+            [wire\:loading\.delay\.shortest],
+            [wire\:loading\.delay\.shorter],
+            [wire\:loading\.delay\.short],
+            [wire\:loading\.delay\.long],
+            [wire\:loading\.delay\.longer],
+            [wire\:loading\.delay\.longest] {
+                display: none;
+            }
+            [wire\:offline] {
+                display: none;
+            }
+            [wire\:dirty]:not(textarea):not(input):not(select) {
+                display: none;
+            }
+            input:-webkit-autofill,
+            select:-webkit-autofill,
+            textarea:-webkit-autofill {
+                animation-duration: 50000s;
+                animation-name: livewireautofill;
+            }
+            @keyframes livewireautofill {
+                from {
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default" style="z-index: 999;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="login.html">Đăng nhập</a></li>
+                        <li><a href="register.html">Đăng ký</a></li>
+                    </ul>
+                </div>
+            </div>
+              
+              
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Đăng nhập</div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form" method="POST" action="login.html">
+                                <input type="hidden" name="_token" value="N0VeGN7qSeF2L3udYZLQ8Im507uFtmxShuILEXoz" />
+                                <div class="form-group">
+                                    <label for="name" class="col-md-4 control-label">Tên đăng nhập</label>
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control" name="name" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-4 control-label">Mật khẩu</label>
+                                    <div class="col-md-6">
+                                        <input id="password" type="password" class="form-control" name="password" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="remember" /> Ghi nhớ </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-primary"><i class="fas fa-btn fa-sign-in"></i> Đăng nhập</button>
+                                        <a class="btn btn-link" href="password/reset.html">Quên mật khẩu?</a>
+                                    </div>
+                                </div>
+                                <div id="success-message" class="alert alert-success" style="display:none">
+                                    Đăng nhập thành công!
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Lấy phần tử form và gán sự kiện khi submit
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Ngăn chặn form submit
+        
+                // Lấy giá trị của các input
+                const name = document.getElementById('name').value;
+                const password = document.getElementById('password').value;
+        
+                // Kiểm tra tên đăng nhập và mật khẩu
+                if (name === 'admin' && password === '123456') {
+                    // Nếu đăng nhập thành công, hiển thị thông báo
+                    const successMessage = document.getElementById('success-message');
+                    successMessage.style.display = 'block';
+                } else {
+                    // Nếu đăng nhập không thành công, hiển thị thông báo lỗi
+                    alert('Tên đăng nhập hoặc mật khẩu không đúng!');
+                }
+            });
+        </script>
+        
+
+        <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+        <script data-turbo-eval="false" data-turbolinks-eval="false">
+            window.livewire = new Livewire();
+            window.Livewire = window.livewire;
+            window.livewire_app_url = "";
+            window.livewire_token = "IqVGFaXEpj9T1TLaIQko8k9wzQ2iuT9qtumZscMp";
+            window.deferLoadingAlpine = function (callback) {
+                window.addEventListener("livewire:load", function () {
+                    callback();
+                });
+            };
+            let started = false;
+            window.addEventListener("alpine:initializing", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                if (!started) {
+                    window.livewire.start();
+                    started = true;
+                }
+            });
+        </script>
+        
+    </body>
+</html>
